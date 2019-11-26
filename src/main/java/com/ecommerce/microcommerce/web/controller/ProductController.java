@@ -49,6 +49,16 @@ public class ProductController {
         return produitsFiltres;
     }
 
+    //Récupérer la liste des produits par ordre alphabetique
+
+    @RequestMapping(value = "/ProduitsAlphabetique", method = RequestMethod.GET)
+
+    public List<Product> trierProduitsParOrdreAlphabetique () {
+
+        List<Product> produits = productDao.findByOrderByNomAsc();
+
+        return produits;
+    }
 
 
     //Récupérer un produit par son Id
